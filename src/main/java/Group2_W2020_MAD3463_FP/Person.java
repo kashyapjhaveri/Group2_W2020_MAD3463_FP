@@ -118,10 +118,10 @@ abstract public class Person implements IDisplay {
     }
 
     public String getPassword() {
-        return password;
+        return decryptPassword(password);
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = encryptPassword(password);
     }
 }
