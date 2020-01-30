@@ -1,6 +1,7 @@
 package Group2_W2020_MAD3463_FP;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 abstract public class Person implements IDisplay {
     //Common member Variables
@@ -16,9 +17,9 @@ abstract public class Person implements IDisplay {
     private String userName;
     private String password;
 
-    private static Byte key =5;
+    private Byte key = 5;
 
-    private static String encryptPassword(String originalPassword)
+    private String encryptPassword(String originalPassword)
     {
         char originalPasswordArray[] = originalPassword.toCharArray();
 
@@ -26,6 +27,19 @@ abstract public class Person implements IDisplay {
         {
             int temp=originalPasswordArray[i];
             temp+=key;
+            originalPasswordArray[i]=(char)temp;
+        }
+        return new String(originalPasswordArray);
+    }
+
+    private String decryptPassword(String originalPassword)
+    {
+        char originalPasswordArray[] = originalPassword.toCharArray();
+
+        for (int i=0;i<originalPassword.length();i++)
+        {
+            int temp=originalPasswordArray[i];
+            temp-=key;
             originalPasswordArray[i]=(char)temp;
         }
         return new String(originalPasswordArray);
@@ -109,9 +123,5 @@ abstract public class Person implements IDisplay {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(encryptPassword("kashyap6768"));
     }
 }
