@@ -16,6 +16,20 @@ abstract public class Person implements IDisplay {
     private String userName;
     private String password;
 
+    private static Byte key =5;
+
+    private static String encryptPassword(String originalPassword)
+    {
+        char originalPasswordArray[] = originalPassword.toCharArray();
+
+        for (int i=0;i<originalPassword.length();i++)
+        {
+            int temp=originalPasswordArray[i];
+            temp+=key;
+            originalPasswordArray[i]=(char)temp;
+        }
+        return new String(originalPasswordArray);
+    }
 
     public Integer getId() {
         return id;
@@ -95,5 +109,9 @@ abstract public class Person implements IDisplay {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(encryptPassword("kashyap6768"));
     }
 }
