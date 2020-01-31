@@ -18,9 +18,6 @@ public class Group2MainClass {
                 System.out.println("1.Person");
                 System.out.println("2.Vehical");
                 System.out.println("+++++++++++++++++++++++++");
-                /*System.out.println("***********ASSIGN********");
-                System.out.println("4.");
-                System.out.println("*************************");*/
                 System.out.println("0.Exit");
                 System.out.println("=============================");
                 System.out.println(" ");
