@@ -1,4 +1,8 @@
-package Group2_W2020_MAD3463_FP;
+package Group2_W2020_MAD3463_FP.VehicalPack;
+
+import Group2_W2020_MAD3463_FP.Enums.Fuel;
+import Group2_W2020_MAD3463_FP.IDisplay;
+import Group2_W2020_MAD3463_FP.PersonPack.Driver;
 
 abstract public class Vehical implements IDisplay {
 

@@ -1,10 +1,13 @@
-package Group2_W2020_MAD3463_FP;
+package Group2_W2020_MAD3463_FP.PersonPack;
 
 public class Driver extends Person {
 
     private String drivingLicenceNumber;
-    private Boolean isHistroyCleared;
-    private double salary;
+    private Boolean isHistoryCleared;
+    private Double salary;
+
+    public Driver() {
+    }
 
     public String getDrivingLicenceNumber() {
         return drivingLicenceNumber;
@@ -12,11 +15,11 @@ public class Driver extends Person {
 
 
     public Boolean getHistroyCleared() {
-        return isHistroyCleared;
+        return isHistoryCleared;
     }
 
     public void setHistroyCleared(Boolean histroyCleared) {
-        isHistroyCleared = histroyCleared;
+        isHistoryCleared = histroyCleared;
     }
 
     public double getSalary() {

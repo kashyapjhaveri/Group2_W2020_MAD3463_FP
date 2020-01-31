@@ -1,4 +1,4 @@
-package Group2_W2020_MAD3463_FP;
+package Group2_W2020_MAD3463_FP.VehicalPack;
 
 public class Car extends Vehical {
 
