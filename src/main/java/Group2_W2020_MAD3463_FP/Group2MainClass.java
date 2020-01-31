@@ -28,7 +28,7 @@ public class Group2MainClass {
                 {
                     case 1:
                     {
-                        /*int nextChoice=0;
+                        int nextChoice=0;
 
                         do {
                             System.out.println("+++++++++++++++++++");
@@ -61,7 +61,7 @@ public class Group2MainClass {
                                 }
                             }
                         }
-                        while (nextChoice!=0);*/
+                        while (nextChoice!=0);
                         /*Customer kashyap = new Customer(1,"Kashyap","Jhaveri",Gender.male, LocalDate.of(1998,05,29),"7567549732","jhaverikashyap1998@gmail.com","kashyapjhaveri","kashyap123","4414","Lawrence Ave E","Scarborough","Ontario");
                         kashyap.print();*/
                     }
