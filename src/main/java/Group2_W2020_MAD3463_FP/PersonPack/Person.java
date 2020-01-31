@@ -9,7 +9,7 @@ abstract public class Person implements IDisplay {
     //Common member Variables
     /*Common member methods*/
 
-    private Integer id;
+    private String id;
     private String firstName,lastName;
     private Gender gender;
     private LocalDate birthDate;
@@ -23,7 +23,7 @@ abstract public class Person implements IDisplay {
 
     public Person(){}
 
-    public Person(Integer id, String firstName, String lastName, Gender gender, LocalDate birthDate, String mobileNumber, String email, String userName, String password) {
+    public Person(String id, String firstName, String lastName, Gender gender, LocalDate birthDate, String mobileNumber, String email, String userName, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -67,7 +67,7 @@ abstract public class Person implements IDisplay {
         return new String(originalPasswordArray);
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -99,7 +99,8 @@ abstract public class Person implements IDisplay {
         this.gender = gender;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDate getBirthDate()
+    {
         return birthDate;
     }
 

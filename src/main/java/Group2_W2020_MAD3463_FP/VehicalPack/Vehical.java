@@ -18,6 +18,21 @@ abstract public class Vehical implements IDisplay {
     private Integer baseRate;
     private Integer ratePerKm;
 
+    public Vehical() {}
+
+    public Vehical(String vehicalIndentificationNumber, String vechicalDiscription, String manufacturerName, Boolean isSelfDrive, Driver driver, Boolean isInsured, String insuranceProviderName, Byte noOfSeat, Fuel fuelType, Integer baseRate, Integer ratePerKm) {
+        this.vehicalIndentificationNumber = vehicalIndentificationNumber;
+        this.vechicalDiscription = vechicalDiscription;
+        this.manufacturerName = manufacturerName;
+        this.isSelfDrive = isSelfDrive;
+        this.driver = driver;
+        this.isInsured = isInsured;
+        this.insuranceProviderName = insuranceProviderName;
+        this.noOfSeat = noOfSeat;
+        this.fuelType = fuelType;
+        this.baseRate = baseRate;
+        this.ratePerKm = ratePerKm;
+    }
 
     public String getVehicalIndentificationNumber() {
         return vehicalIndentificationNumber;
