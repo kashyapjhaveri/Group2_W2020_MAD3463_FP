@@ -176,46 +176,9 @@ public class Group2MainClass {
 
     public static void main(String[] args) {
         try {
-
-            DataInputStream input = new DataInputStream(System.in);  //https://stackoverflow.com/questions/5287538/how-to-get-the-user-input-in-java
-            int choice=0;
-
-
-            /*System.out.println("+++++++++List+++++++++++");
-            System.out.println("1.Customer");
-            System.out.println("2.Owner");
-            System.out.println("3.Driver");
-            System.out.println("++++++++++++++++++++++++");
-            System.out.println("Enter your choice: - ");
-            choice=input.readInt();
-
-            switch (choice)
-            {
-                case 1:
-                {
-
-                    break;
-                }
-            }*/
-
             readCustomersToHashMap();
             readOwnersToHashMap();
             readDriversToHashMap();
-
-            /*for (Customer cust:customers.values())
-            {
-                cust.print();
-            }*/
-
-            /*for (Owner owner:owners.values())
-            {
-                owner.print();
-            }*/
-
-            /*for (Driver driver:drivers.values())
-            {
-                driver.print();
-            }*/
 
 
         }
