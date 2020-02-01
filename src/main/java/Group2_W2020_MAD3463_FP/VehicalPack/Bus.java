@@ -42,6 +42,6 @@ public class Bus extends Vehical {
 
     @Override
     public void print() {
-
+        System.out.println(getVehicalIndentificationNumber()+" "+getVechicalDiscription()+" "+getManufacturerName()+" "+getSelfDrive()+" "+getInsured()+" "+getInsuranceProviderName()+" "+getNoOfSeat()+" "+getFuelType()+" "+getBaseRate()+" "+getRatePerKm()+" "+getTypeOfBus()+" "+getAccessibilityAvailable()+" "+getWifiAvailable());
     }
 }

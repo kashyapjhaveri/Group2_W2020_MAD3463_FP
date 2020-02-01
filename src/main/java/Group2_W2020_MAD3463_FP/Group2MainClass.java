@@ -6,13 +6,14 @@ import Group2_W2020_MAD3463_FP.PersonPack.Customer;
 import Group2_W2020_MAD3463_FP.PersonPack.Driver;
 import Group2_W2020_MAD3463_FP.PersonPack.Owner;
 import Group2_W2020_MAD3463_FP.VehicalPack.Bus;
+import Group2_W2020_MAD3463_FP.VehicalPack.Car;
+import Group2_W2020_MAD3463_FP.VehicalPack.MotorCycle;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
-import java.util.Collection;
-import java.util.HashMap;
+
 
 
 public class Group2MainClass {
@@ -20,6 +21,8 @@ public class Group2MainClass {
     public static HashMap<String, Owner> owners = new HashMap<>();
     public static HashMap<String, Driver> drivers = new HashMap<>();
     public static HashMap<String, Bus> buses = new HashMap<>();
+    public static HashMap<String, Car> motorCycles = new HashMap<>();
+    public static HashMap<String, MotorCycle> motorcycles = new HashMap<>();
 
     public static DateTimeFormatter dateFormate= DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -27,7 +30,7 @@ public class Group2MainClass {
     {
         String line="";
         try{
-            File file = new File("C:\\Class Pratice\\java\\JavaProject\\src\\main\\java\\Group2_W2020_MAD3463_FP\\InputFiles\\customers.csv");
+            File file = new File(".\\InputFiles\\customers.csv");
             FileReader reader = new FileReader(file);
             BufferedReader bufferedReader=new BufferedReader(reader);
             while ((line=bufferedReader.readLine())!=null)
@@ -61,7 +64,7 @@ public class Group2MainClass {
     {
         String line="";
         try{
-            File file = new File("C:\\Class Pratice\\java\\JavaProject\\src\\main\\java\\Group2_W2020_MAD3463_FP\\InputFiles\\Owners.csv");
+            File file = new File(".\\InputFiles\\Owners.csv");
             FileReader reader = new FileReader(file);
             BufferedReader bufferedReader=new BufferedReader(reader);
             while ((line=bufferedReader.readLine())!=null)
@@ -95,7 +98,7 @@ public class Group2MainClass {
     {
         String line="";
         try{
-            File file = new File("C:\\Class Pratice\\java\\JavaProject\\src\\main\\java\\Group2_W2020_MAD3463_FP\\InputFiles\\Drivers.csv");
+            File file = new File(".\\InputFiles\\Drivers.csv");
             FileReader reader = new FileReader(file);
             BufferedReader bufferedReader=new BufferedReader(reader);
             while ((line=bufferedReader.readLine())!=null)
@@ -130,41 +133,104 @@ public class Group2MainClass {
     {
         String line="";
         try{
-            File file = new File("C:\\Class Pratice\\java\\JavaProject\\src\\main\\java\\Group2_W2020_MAD3463_FP\\InputFiles\\Buses.csv");
+            File file = new File(".\\InputFiles\\Buses.csv");
             FileReader reader = new FileReader(file);
             BufferedReader bufferedReader=new BufferedReader(reader);
             while ((line=bufferedReader.readLine())!=null)
             {
                 String content[]=line.split(",");
-                LocalDate tempDate = LocalDate.parse(content[4],dateFormate);
                 Driver tempDriver = null;
 
                 for (int j=0;j<content.length;j++)
                 {
                     Fuel tempFuel = null;
 
-                    if (content[8]=="Petrol")
+                    if (content[8].equalsIgnoreCase("Petrol"))
                          tempFuel=Fuel.petrol;
-                    else if (content[8]=="Diesel")
+                    else if (content[8].equalsIgnoreCase("Diesel"))
                         tempFuel=Fuel.diesel;
 
                     if (content[3].equalsIgnoreCase("false"))
                     {
-                        for (Driver driver:drivers.values())
-                        {
-
-                            if (content[4].compareToIgnoreCase())
-                            {
-
-                            }
-                        }
+                        tempDriver=drivers.get(content[4]);
                     }
 
+                    Bus tempObj = new Bus(content[0],content[1],content[2],Boolean.parseBoolean(content[3]),tempDriver,Boolean.parseBoolean(content[5]),content[6],Byte.parseByte(content[7]),tempFuel,Integer.parseInt(content[9]),Integer.parseInt(content[10]),content[11],Boolean.parseBoolean(content[12]),Boolean.parseBoolean(content[13]));
+                    buses.put(content[0],tempObj);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
 
+    public static void readCarsToHashMap()   //https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+    {
+        String line="";
+        try{
+            File file = new File(".\\InputFiles\\Cars.csv");
+            FileReader reader = new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(reader);
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                String content[]=line.split(",");
+                Driver tempDriver = null;
 
-                    Bus temp = new Bus(content[0],content[1],content[2],Boolean.parseBoolean(content[3]),tempDriver,Boolean.parseBoolean(content[5]),content[6],Byte.parseByte(content[7]),tempFuel,Integer.parseInt(content[8]),Integer.parseInt(content[9]),content[10],Boolean.parseBoolean(content[11]),Boolean.parseBoolean(content[12]));
+                for (int j=0;j<content.length;j++)
+                {
+                    Fuel tempFuel = null;
 
-                    buses.put(content[0],temp);
+                    if (content[8].equalsIgnoreCase("Petrol"))
+                        tempFuel=Fuel.petrol;
+                    else if (content[8].equalsIgnoreCase("Diesel"))
+                        tempFuel=Fuel.diesel;
+
+                    if (content[3].equalsIgnoreCase("false"))
+                    {
+                        tempDriver=drivers.get(content[4]);
+                    }
+
+                    Car tempObj = new Car(content[0],content[1],content[2],Boolean.parseBoolean(content[3]),tempDriver,Boolean.parseBoolean(content[5]),content[6],Byte.parseByte(content[7]),tempFuel,Integer.parseInt(content[9]),Integer.parseInt(content[10]),content[11],content[12]);
+                    motorCycles.put(content[0],tempObj);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    public static void readMotorCyclesToHashMap()   //https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+    {
+        String line="";
+        try{
+            File file = new File(".\\InputFiles\\MotorCycles.csv");
+            FileReader reader = new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(reader);
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                String content[]=line.split(",");
+                Driver tempDriver = null;
+
+                for (int j=0;j<content.length;j++)
+                {
+                    Fuel tempFuel = null;
+
+                    if (content[8].equalsIgnoreCase("Petrol"))
+                        tempFuel=Fuel.petrol;
+                    else if (content[8].equalsIgnoreCase("Diesel"))
+                        tempFuel=Fuel.diesel;
+
+                    if (content[3].equalsIgnoreCase("false"))
+                    {
+                        tempDriver=drivers.get(content[4]);
+                    }
+
+                    MotorCycle tempObj = new MotorCycle(content[0],content[1],content[2],Boolean.parseBoolean(content[3]),tempDriver,Boolean.parseBoolean(content[5]),content[6],Byte.parseByte(content[7]),tempFuel,Integer.parseInt(content[9]),Integer.parseInt(content[10]),Integer.parseInt(content[11]),Float.parseFloat(content[12]));
+                    motorcycles.put(content[0],tempObj);
                 }
             }
         }
@@ -175,16 +241,19 @@ public class Group2MainClass {
     }
 
     public static void main(String[] args) {
-        try {
-            readCustomersToHashMap();
-            readOwnersToHashMap();
-            readDriversToHashMap();
+        /*readCustomersToHashMap();
+        readOwnersToHashMap();*/
+        readDriversToHashMap();
+        readBusesToHashMap();
+        readCarsToHashMap();
+        readMotorCyclesToHashMap();
 
 
-        }
-        catch (Exception e)
+        for (MotorCycle motorCycle:motorcycles.values())
         {
-            System.out.println(e);
+            motorCycle.print();
+            if (motorCycle.getDriver()!=null)
+                System.out.println(motorCycle.getDriver().getFirstName()+" "+motorCycle.getDriver().getLastName());
         }
     }
 }
