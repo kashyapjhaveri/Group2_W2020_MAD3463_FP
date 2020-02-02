@@ -17,10 +17,11 @@ abstract public class Vehical implements IDisplay {
     private Fuel fuelType;
     private Integer baseRate;
     private Integer ratePerKm;
+    private String vehicleType;
 
     public Vehical() {}
 
-    public Vehical(String vehicalIndentificationNumber, String vechicalDiscription, String manufacturerName, Boolean isSelfDrive, Driver driver, Boolean isInsured, String insuranceProviderName, Byte noOfSeat, Fuel fuelType, Integer baseRate, Integer ratePerKm) {
+    public Vehical(String vehicalIndentificationNumber, String vechicalDiscription, String manufacturerName, Boolean isSelfDrive, Driver driver, Boolean isInsured, String insuranceProviderName, Byte noOfSeat, Fuel fuelType, Integer baseRate, Integer ratePerKm, String vehicleType) {
         this.vehicalIndentificationNumber = vehicalIndentificationNumber;
         this.vechicalDiscription = vechicalDiscription;
         this.manufacturerName = manufacturerName;
@@ -32,6 +33,7 @@ abstract public class Vehical implements IDisplay {
         this.fuelType = fuelType;
         this.baseRate = baseRate;
         this.ratePerKm = ratePerKm;
+        this.vehicleType = vehicleType;
     }
 
     public String getVehicalIndentificationNumber() {
@@ -116,5 +118,9 @@ abstract public class Vehical implements IDisplay {
 
     public void setRatePerKm(Integer ratePerKm) {
         this.ratePerKm = ratePerKm;
+    }
+
+    public String getVehicleType() {
+        return vehicleType;
     }
 }

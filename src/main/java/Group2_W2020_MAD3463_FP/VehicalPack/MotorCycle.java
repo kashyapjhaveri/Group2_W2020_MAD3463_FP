@@ -9,7 +9,7 @@ public class MotorCycle extends Vehical {
     private float milage;
 
     public MotorCycle(String vehicalIndentificationNumber, String vechicalDiscription, String manufacturerName, Boolean isSelfDrive, Driver driver, Boolean isInsured, String insuranceProviderName, Byte noOfSeat, Fuel fuelType, Integer baseRate, Integer ratePerKm, Integer maxTopSpeed, float milage) {
-        super(vehicalIndentificationNumber, vechicalDiscription, manufacturerName, isSelfDrive, driver, isInsured, insuranceProviderName, noOfSeat, fuelType, baseRate, ratePerKm);
+        super(vehicalIndentificationNumber, vechicalDiscription, manufacturerName, isSelfDrive, driver, isInsured, insuranceProviderName, noOfSeat, fuelType, baseRate, ratePerKm,"motorcycle");
         this.maxTopSpeed = maxTopSpeed;
         this.milage = milage;
     }
@@ -32,6 +32,19 @@ public class MotorCycle extends Vehical {
 
     @Override
     public void print() {
-        System.out.println(getVehicalIndentificationNumber()+" "+getVechicalDiscription()+" "+getManufacturerName()+" "+getSelfDrive()+" "+getInsured()+" "+getInsuranceProviderName()+" "+getNoOfSeat()+" "+getFuelType()+" "+getBaseRate()+" "+getRatePerKm()+" "+getMaxTopSpeed()+" "+getMaxTopSpeed());
+        /*System.out.println(getVehicalIndentificationNumber()+" "+getVechicalDiscription()+" "+getManufacturerName()+" "+getSelfDrive()+" "+getInsured()+" "+getInsuranceProviderName()+" "+getNoOfSeat()+" "+getFuelType()+" "+getBaseRate()+" "+getRatePerKm()+" "+getMaxTopSpeed()+" "+getMaxTopSpeed());*/
+        System.out.println("VIn:- "+getVehicalIndentificationNumber());
+        System.out.println("Description:- "+getVechicalDiscription());
+        System.out.println("Manufacturer:- "+getManufacturerName());
+        System.out.println("isSelfDrive:- "+getSelfDrive());
+        System.out.println("isInsured:- "+getInsured());
+        System.out.println("insuranceProviderName:- "+getInsuranceProviderName());
+        System.out.println("NumberOfSeat:- "+getNoOfSeat());
+        System.out.println("FuelType:- "+getFuelType());
+        System.out.println("BaseRate:- "+getBaseRate());
+        System.out.println("RatePerKm:- "+getRatePerKm());
+        System.out.println("VehicleType:- "+getVehicleType());
+        System.out.println("MaxTospeed:- "+getMaxTopSpeed());
+        System.out.println("Milage:- "+getMilage());
     }
 }
