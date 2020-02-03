@@ -28,7 +28,7 @@ public class Group2MainClass {
 
     public static DateTimeFormatter dateFormate= DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public static void readCustomersToHashMap()   //https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+    public static void readCustomersToHashMap()   //
     {
         String line="";
         try{
